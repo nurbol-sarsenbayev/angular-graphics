@@ -1,0 +1,10 @@
+<svg:g class="map-region">
+  <g class="map-area">
+    <ng-content></ng-content>
+  </g>
+
+  <g [attr.class]="data.color" [attr.transform]="'translate(' + text.x + ' ' + text.y + ')'" *ngIf="data">
+    <!-- <text *ngIf="region.value" class="map-value" [attr.x]="0" y="-406">{{region.value}}<tspan class="map-jk">ЖК</tspan></text> -->
+    <text class="map-city">{{data.title}}</text>
+  </g>
+</svg:g>

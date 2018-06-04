@@ -1,0 +1,16 @@
+
+:host /deep/ {
+
+  .map {
+    &-area {
+      fill: #f1cc31;
+      stroke: #404559;
+      stroke-width: 1;    
+    }  
+    
+    &-city {
+      font-size: 23.3px;
+      fill: #000;
+    }
+  }
+}
