@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MapComponent } from './map/map.component';
-import { MapRegionComponent } from './map/map-region/map-region.component';
+import { MapComponent } from './components/map/map.component';
+import { MapRegionComponent } from './components/map/map-region/map-region.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { PieChartService } from './services/pie-chart.service';
 
 @NgModule({
   imports: [
@@ -9,10 +11,13 @@ import { MapRegionComponent } from './map/map-region/map-region.component';
   ],
   declarations: [
     MapComponent,
-    MapRegionComponent
+    MapRegionComponent,
+    PieChartComponent
   ],
   exports: [
-    MapComponent
-  ]
+    MapComponent,
+    PieChartComponent
+  ],
+  providers: [PieChartService]
 })
 export class SharedModule { }
