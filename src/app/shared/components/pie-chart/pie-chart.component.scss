@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.line {
+  stroke-width: 2; 
+  stroke: #7F9097;
+}
+
+:host {
+  display: block;
+}
+
+.indicator {
+  font-size: 15px;
+  fill: #87888D;
+}
+
+.label {
+  font-size: 28px;
+  fill: #87888D;
+}
+
+.value {
+  fill: #000;
+  font-size: 57px;
+}
+

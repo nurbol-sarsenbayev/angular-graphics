@@ -1,0 +1,38 @@
+<svg viewBox="0 0 440 440">
+
+  <defs>
+    
+  </defs>
+
+  <g transform="rotate(-90 220 220) translate(220 220)" fill="none">
+    <circle cx="0" cy="0" r="175" stroke-width="1" [attr.stroke]="'#434752'" stroke-dasharray="4"></circle>
+    
+    <line class="line" x1="0" x2="25" transform="translate(175 0)"></line>
+    <line class="line" x1="0" x2="25" transform="translate(-200 0)"></line>
+    <line class="line" x1="0" x2="25" transform="translate(0 175) rotate(90)"></line>
+    <line class="line" x1="0" x2="25" transform="translate(0 -175) rotate(-90)"></line>
+
+    <text class="indicator" transform="translate(185 5) rotate(90)">100%</text>
+    <text class="indicator" transform="translate(5 -213) rotate(90)">75%</text>
+    <text class="indicator" transform="translate(-198 5) rotate(90)">50%</text>
+    <text class="indicator" transform="translate(5 185) rotate(90)">25%</text>
+
+    <text class="label" transform="rotate(90)" y="20" text-anchor="middle">
+      на 2018
+      <tspan dy="25" x="0">построено</tspan>
+    </text>
+
+    <text class="value" transform="rotate(90)" y="-20" text-anchor="middle">
+      {{value}}
+    </text>
+
+    <g *ngFor="let item of items; let id = index" [attr.stroke]="item.color" [attr.transform]="offset(id)">
+      <circle cx="0" cy="0" r="155" stroke-width="10" [attr.stroke-dasharray]="dashArray(155, item.percent)"></circle>
+      <circle cx="0" cy="0" r="135" stroke-width="30" stroke-opacity="0.25" [attr.stroke-dasharray]="dashArray(135, item.percent)"></circle>    
+    </g>
+
+    <circle *ngFor="let item of outerItems" cx="0" cy="0" r="175" [attr.stroke]="item.color" stroke-width="10" [attr.stroke-dasharray]="dashArray(175, item.percent)" [attr.stroke-opacity]="item.opacity"></circle>
+
+    <circle *ngFor="let item of outerItems" cx="175" cy="0" r="7" [attr.stroke]="item.circle.stroke" [attr.fill]="item.circle.fill" stroke-width="2" [attr.transform]="'rotate(' + getAngle(item.percent) + ')'"></circle>
+  </g>
+</svg>
