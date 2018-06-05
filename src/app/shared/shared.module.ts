@@ -4,6 +4,8 @@ import { MapComponent } from './components/map/map.component';
 import { MapRegionComponent } from './components/map/map-region/map-region.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { PieChartService } from './services/pie-chart.service';
+import { LabelPieChartComponent } from './components/label-pie-chart/label-pie-chart.component';
+import { NumberFormatPipe } from './pipes/number-format.pipe';
 
 @NgModule({
   imports: [
@@ -12,11 +14,15 @@ import { PieChartService } from './services/pie-chart.service';
   declarations: [
     MapComponent,
     MapRegionComponent,
-    PieChartComponent
+    PieChartComponent,
+    LabelPieChartComponent,
+    NumberFormatPipe
   ],
   exports: [
     MapComponent,
-    PieChartComponent
+    PieChartComponent,
+    LabelPieChartComponent,
+    NumberFormatPipe
   ],
   providers: [PieChartService]
 })

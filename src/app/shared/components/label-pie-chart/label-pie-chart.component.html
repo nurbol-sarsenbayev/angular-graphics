@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1450 600">
+
+  <g transform="translate(0 85)">
+    <g transform="rotate(-80 215 215) translate(215 215)" fill="none">        
+      <circle cx="0" cy="0" r="188" stroke-width="54" stroke="#19100D"></circle>
+      <g *ngFor="let item of items; let id = index" [attr.stroke]="item.color" [attr.transform]="offset(id)">
+        <circle cx="0" cy="0" r="188" stroke-width="54" [attr.stroke-dasharray]="dashArray(188, item.percent)"></circle>
+      </g>
+      <g *ngFor="let item of items; let id = index" [attr.transform]="offset(id)">
+        <line class="pie-split" x1="0" y1="0" x2="215"></line>
+      </g>
+    </g>
+
+    <g transform="translate(215 215)">
+      <text *ngIf="value !== null" class="center-value" x="0" y="-20">{{value}}</text>
+      <text *ngIf="value === null" class="center-value2" x="0" y="-20">Нет данных</text>
+      <text class="center-text" x="0" y="20">Отклонения
+          <tspan x="0" dy="30">при обходе</tspan></text>
+    </g>
+  </g>
+
+  <text class="label-name" x="215" y="590">{{name}}</text>
+
+  <g class="label" *ngFor="let item of items; let i = index" [attr.transform]="'translate(790 ' + (203*i) + ')'">
+    <rect x="0" y="0" width="6" height="193" [attr.fill]="item.color" />
+    <rect x="6" y="0" width="654" height="193" class="label-rect" /> 
+    <text x="30" y="70" class="label-value">{{item.value | numberFormat}}</text>
+    <text x="30" y="160" class="label-text">{{item.label}}</text>
+    <text x="620" y="70" class="label-percent" [attr.fill]="item.color">{{item.percent | numberFormat}}%</text>       
+  </g>
+  
+</svg>

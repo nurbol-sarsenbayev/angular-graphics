@@ -1,0 +1,52 @@
+
+.label {
+  fill: #fff;
+
+  &-name {
+    fill: #fff;
+    text-anchor: middle;
+    font-size: 60px;
+  }
+
+  &-rect {
+    fill: #1D242F;
+  }
+
+  &-value {
+    font-size: 50px;
+  }
+
+  &-percent {
+    font-size: 50px;
+    text-anchor: end;    
+  }
+
+  &-text {
+    font-size: 35px;
+  }
+}
+
+.pie-split {
+  stroke: #19100D; 
+  stroke-width: 2;
+}
+
+.center {
+  &-text {
+    fill: #646E78;
+    text-anchor: middle;
+    font-size: 25px;
+  }
+
+  &-value {
+    fill: #fff;
+    text-anchor: middle;
+    font-size: 60px;
+  }
+
+  &-value2 {
+    fill: #000;
+    text-anchor: middle;
+    font-size: 40px;
+  }
+}
